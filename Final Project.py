@@ -30,5 +30,5 @@ server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
 # to interact with the server, first we log in
 # and then we send the message
 server.login(username, password)
-server.sendmail(from_addr, to_addrs[0], message.as_string())
+server.sendmail(from_addr, to_addrs, message.as_string())
 server.quit()
