@@ -2,6 +2,11 @@ import stdiomask
 import smtplib
 from email.mime.text import MIMEText
 
+# SUMBER : https://humberto.io/blog/sending-and-receiving-emails-with-python/
+
+
+
+
 # connect with Google's servers
 smtp_ssl_host = 'smtp.gmail.com'
 smtp_ssl_port = 465
@@ -10,9 +15,14 @@ username = input("Email:")
 password = stdiomask.getpass()
 
 from_addr = username
-alamat_penerima = input("Alamat email penerima:")
+jumlah_penerima = int(input("Jumlah penerima:"))
 to_addrs = []
-to_addrs.append(alamat_penerima)
+for receiver in range(jumlah_penerima):
+   alamat_penerima = input("Alamat email penerima:")
+   to_addrs.append(alamat_penerima)
+
+
+#print(to_addrs)
 
 # the email lib has a lot of templates
 # for different message formats,
